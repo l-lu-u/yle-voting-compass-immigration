@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;700;900&family=Rakkas&display=swap');
+:root {
+    /* Font Family */
+    --global--font-heading: 'Rakkas', cursive;
+    --global--font-paragraph: 'Noto Sans SC', sans-serif;
+
+    /* Font Size */
+    --global--font-size-h1: 4.8rem;
+    --global--font-size-h2: 2.0rem;
+    --global--font-size-h3: 1.6rem;
+    --global--font-size-p: 1.4rem;
+    --global--letter-spacing: normal;
+    --global--line-height-p: 2.2rem;
+
+    /* Font Weight */
+    --global--font-weight-regular: 400;
+    --global--font-weight-emphasis: 700;
+
+    /* Spacing & Sizing */
+    --global--spacing-primary: 5.6rem;
+    --global--spacing-secondary: 2.4rem;
+    --global--spacing-intext: 1.6rem;
+    --global--sizing-icon: 2.4rem;
+    --global--sizing-icon-L: 3.6rem; 
+    --global--border-radius: 3.6rem;
+
+    /* Colour */
+    --colour-eggshell: #B9E4D7;
+    --colour-cornflower: #0B64B9;
+    --colour-beige: #EEE9E3;
+    --colour-ink: #524334;
+    --colour-cinnabar: #AF4734;
+    --colour-orange: #F9BA19;
+    --colour-lavendar: #874F81;
+}
+
+/* Container */
+html { 
+    font-size: 10px; 
+    scroll-behavior: smooth;
+}
+body {
+    font-size: var(--global--font-size-p);
+    font-family: var(--global--font-paragraph);
+    background-color: var(--colour-beige);
+    color: var(--colour-ink);
+}
+html, body, section {
+    block-size: 100%;
+}
+  
+html {
+    scroll-snap-type: y mandatory;
+}
+
+/* Typography */
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+    font-family: var(--global--font-heading);
+}
+h1, .h1{
+    
+    font-size: var(--global--font-size-h1);
+    margin: 0 0 var(--global--spacing-primary);
+}
+h2, .h2{
+    font-size: var(--global--font-size-h2);
+    font-weight: var(--global--font-weight-regular);
+}
+h3, .h3{
+    font-size: var(--global--font-size-h3);
+}
+p{
+    line-height: var(--global--line-height-p);
+    font-family: var(--global--font-paragraph);
+}
+a {
+    color:var(--colour-ink);
+    text-decoration: underline;
+    font-weight: bold;
+}
+a:hover{
+    background-color: var(--colour-cinnabar);
+    color:var(--colour-beige)
+}
+.highlight {
+    background-color: var(--colour-eggshell);
+}
