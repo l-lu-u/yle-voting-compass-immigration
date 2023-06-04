@@ -8,6 +8,12 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>How do election parties and candidates view "immigration"?</h1>
+    <script>
+        d3.json("./data/partiesResults.json").then(function(data){
+            console.table(data);
+        })
+
+    </script>
 </body>
 </html>
