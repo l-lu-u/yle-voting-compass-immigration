@@ -44,6 +44,7 @@ body {
     font-family: var(--global--font-paragraph);
     background-color: var(--colour-beige);
     color: var(--colour-ink);
+    padding: var(--global--spacing-primary);
 }
 html, body, section {
     block-size: 100%;
@@ -51,6 +52,11 @@ html, body, section {
   
 html {
     scroll-snap-type: y mandatory;
+}
+
+/* Sections */
+.card._intro{
+    text-align: center;
 }
 
 /* Typography */

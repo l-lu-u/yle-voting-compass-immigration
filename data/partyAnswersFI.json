@@ -1,0 +1,105 @@
+{
+    "parties": [
+      {
+        "name": "Avoin Puolue",
+        "stance": "Kyllä",
+        "position": "Tarvitsemme lisää työvoimaa erityisesti sote- ja IT-aloille. Eri kulttuurit auttavat vientityössä. Vakaviin rikoksiin syyllistyvät muuttajat on syytä karkoittaa"
+      },
+      {
+        "name": "Eläinoikeuspuolue",
+        "stance": "Kyllä",
+        "position": "Kulttuurinen monimuotoisuus tekee Suomesta rikkaamman. Maahanmuuton esteitä tulee purkaa sillä ihmisten vapaa liikkuvuus on yksi keskeisiä ihmisoikeuksista."
+      },
+      {
+        "name": "Feministinen Puolue",
+        "stance": "Kyllä",
+        "position": "Kulttuurisesti yhtenäinen valtio tarkoittaa usein sortoa ja vähemmistöjen sulauttamista osaksi valtaväestöä. Monikulttuurisuus antaa vapauden omaan kulttuuriin."
+      },
+      {
+        "name": "KD",
+        "stance": "Kyllä",
+        "position": "Monikulttuurisuus ei ole ongelma, kun noudatetaan maan lakeja ja sitoudutaan kunnioittamaan kaikkien ihmisarvoa ja demokratiaa."
+      },
+      {
+        "name": "Kansalaisliitto",
+        "stance": "Ei",
+        "position": "Työperäinen maahanmuutto tarveharkinnalla on ihan hyväksyttävää. Monikulttuurisuus ei saa syrjäyttää omaa kulttuuriamme."
+      },
+      {
+        "name": "Keskusta",
+        "stance": "Kyllä",
+        "position": "Monikulttuurisuudesta on Suomelle hyötyä. Jokaisen Suomeen tulijan on kuitenkin noudatettava maamme lakeja ja sopeuduttava kulttuuriimme."
+      },
+      {
+        "name": "Kokoomus",
+        "stance": "Kyllä",
+        "position": "Suomeen on voitava helposti tulla tekemään työtä, yrittämään ja opiskelemaan. Ongelmia seuraa, jos samalla ei pidetä kiinni keskeisistä yhteiskunnan säännöistä."
+      },
+      {
+        "name": "Korjausliike",
+        "stance": "Ei",
+        "position": "Vain, jos kykenemme luomaan yritteliään maan. Ei, jos jatkamme globaalina sosiaalitoimistona. Meidän pitää tehdä tavoitteellisempaa maahanmuuttopolitiikkaa."
+      },
+      {
+        "name": "Kristallipuolue",
+        "stance": "Ei",
+        "position": "Liika on liikaa. Kun monikulttuurisuuden haitat ylittävät sen hyödyt, niin on rakkautta kaikkia kohtaan laittaa tiukemmat rajat."
+      },
+      {
+        "name": "Liberaalipuolue",
+        "stance": "Kyllä",
+        "position": "Yhteiskunnassa, jossa erilaiset kulttuurit elävät keskenään sovussa, toteutuvat vapauden arvot."
+      },
+      {
+        "name": "Liike Nyt",
+        "stance": "Kyllä",
+        "position": "Liike Nyt haluaa lisää työperäistä maahanmuuttoa. Tulijoiden pitää haluta ja pystyä sopeutumaan suomalaiseen yhteiskuntaan ja tekemään töitä."
+      },
+      {
+        "name": "Perussuomalaiset",
+        "stance": "Ei",
+        "position": "Monikulttuurisuus kiihdyttää yhteiskunnan segregoitumista, vähentää maassa asuvien ihmisten yhteenkuuluvuuden tunnetta ja lisää yleistä turvattomuutta."
+      },
+      {
+        "name": "RKP",
+        "stance": "Kyllä",
+        "position": "Haluamme avoimen ja monikulttuurisen yhteiskunnan, jossa kaikkia kunnioitetaan. Suomen etu ei ole käpertyä itseensä."
+      },
+      {
+        "name": "SDP",
+        "stance": "Kyllä",
+        "position": "Toisten ymmärtäminen ja erilaisuuden kunnioittaminen ovat SDP:n aatteen ytimessä. Suomi on avoin yhteiskunta, jolla on kyky nähdä moninaisuus voimavarana."
+      },
+      {
+        "name": "SKP",
+        "stance": "Kyllä",
+        "position": "Kulttuurit elävät vuorovaikutuksesta toistensa kanssa. Niistä mikään ei voi olla olematta monikulttuurinen. Suomi ei ole tästä poikkeus."
+      },
+      {
+        "name": "Sinimusta Liike",
+        "stance": "Ei",
+        "position": "Monikulttuurisuus tarkoittaa kehitystä, jossa suomalainen yhteiskunta yrittää epätoivoisesti keksiä ratkaisuja värillisten kansojen aiheuttamiin ongelmiin."
+      },
+      {
+        "name": "Suomen Kansa Ensin",
+        "stance": "Ei",
+        "position": "Monikulttuurisuus ei ole toimi eikä ole toiminut ongelmitta yhdessäkään maassa. Koskaan."
+      },
+      {
+        "name": "Vapauden Liitto",
+        "stance": "Ei",
+        "position": "Kyllä ja ei, riippuu asiasta. Jos kaikki ovat ‘monikulttuurisia’, niin on vain yksi kulttuuri. Kulttuureissa on kiinnostavaa juuri se, että ne ovat erilaisia."
+      },
+      {
+        "name": "Vasemmistoliitto",
+        "stance": "Kyllä",
+        "position": "Monikulttuurisuus ja kansainvälistyminen ovat tosiasioita. Suomen vientivetoinen talous kaipaavat kansainvälistä osaamista sekä kansainvälisiä osaajia."
+      },
+      {
+        "name": "Vihreat",
+        "stance": "Kyllä",
+        "position": "Suomi on aina ollut monikulttuurinen. Monikulttuurisuuden ansiosta jokainen voi rakentaa omaa identiteettiään ja oppia kunnioittamaan erilaisuutta."
+      }
+    ]
+}
+  
