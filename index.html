@@ -15,8 +15,68 @@
         <h2>Finnish election candidates and parties' views on immigration (in voting machine)</h2>
         <p>Source: Yle Uutisten vaalikonedatat (Yle Voting Machine Open Data) </p>
     </div>
+    <div id="bee_swarm"></div>
 
     <script>
+        var title = "Anonymous Candidates' Answers on Immigration (2023)";
+        var units = "candiate";
+
+        //set the dimensions and margins of the graph
+        const margin = {top:80, right:30, bottom:30, left:30},
+            width = 800 - margin.left - margin.right,
+            height = 750 - margin.top - margin.bottom;
+        const padding = 0.01;
+        //set the radius of the circles
+        const circleRadius = 5; 
+
+
+        var svg = d3.select("#bee_swarm")
+        .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+            .attr("transform", "translate("+margin.left+","+margin.top+")");
+
+        d3.json("./data/candidate-answers-2023.json").then(function(data){
+            // console.table(data);
+
+            // list of parties
+            var parties = [];
+            data.forEach(element => {
+                var e = {
+                    party: element.party
+                }
+                parties.push(e.party);
+            });
+
+            // build x axis
+            var xScale = d3.scaleLinear()
+                .range([0,width])
+                .domain([1, 5]);
+            svg.append("g")
+                // .attr("transform","translate(0,"+height+")")
+                .call(d3.axisTop(xScale))
+                .call(g => g.select(".domain")
+                    .remove())
+                .attr("color", "black");
+
+            // build y axis
+            var yScale = d3.scaleBand()
+                .range([height,0])    
+                .domain(parties);
+
+            svg.selectAll("circle")
+                .data(data)
+                .join("circle")
+                .attr("cx", (d) => xScale(d.fewer_quota_refugees))
+                .attr("cy", (d) => yScale(d.party))
+                .attr("r", circleRadius)
+                .attr("fill", "steelblue");
+
+
+        })
+
+
     </script>
 </body>
 </html>
