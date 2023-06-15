@@ -1,12 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;700;900&family=Rakkas&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Palanquin:wght@100;200;300;400;500;600;700&display=swap');
+
 :root {
     /* Font Family */
-    --global--font-heading: 'Rakkas', cursive;
-    --global--font-paragraph: 'Noto Sans SC', sans-serif;
+    --global--font-heading: 'Krona One', sans-serif;
+    --global--font-paragraph: 'Palanquin', sans-serif;
 
     /* Font Size */
-    --global--font-size-h1: 4.8rem;
-    --global--font-size-h2: 2.0rem;
+    --global--font-size-h1: 6.4rem;
+    --global--font-size-h2: 2.4rem;
     --global--font-size-h3: 1.6rem;
     --global--font-size-p: 1.4rem;
     --global--letter-spacing: normal;
@@ -25,13 +26,17 @@
     --global--border-radius: 3.6rem;
 
     /* Colour */
-    --colour-eggshell: #B9E4D7;
-    --colour-cornflower: #0B64B9;
-    --colour-beige: #EEE9E3;
-    --colour-ink: #524334;
-    --colour-cinnabar: #AF4734;
-    --colour-orange: #F9BA19;
-    --colour-lavendar: #874F81;
+    --colour-ink: #363636;
+    --colour-kok: #265BB3;
+    --colour-ps: #57BFEC;
+    --colour-sdp: #DA3C2E;
+    --colour-kesk: #009F2B;
+    --colour-vihr: #85CE3F;
+    --colour-vas: #B52A38;
+    --colour-rkp: #EFBB31;
+    --colour-kd: #724BE3;
+    --colour-liik: #AF0079;
+    --colour-other: #9FABB4;
 }
 
 /* Container */
@@ -42,7 +47,7 @@ html {
 body {
     font-size: var(--global--font-size-p);
     font-family: var(--global--font-paragraph);
-    background-color: var(--colour-beige);
+    background-color: white;
     color: var(--colour-ink);
     padding: var(--global--spacing-primary);
 }

@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/normalize.css"/>
     <link rel="stylesheet" href="./css/style.css?"/>
+    <scrip src="./test.js"></scrip>
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-random@3"></script>
     <title>What we talk about when we talk about immigration?</title>
 </head>
 <body>
@@ -14,23 +16,44 @@
         <h1>What we talk about when we talk about immigration?</h1>
         <h2>Finnish election candidates and parties' views on immigration (in voting machine)</h2>
         <p>Source: Yle Uutisten vaalikonedatat (Yle Voting Machine Open Data) </p>
+        <select id="selectButton"></select>
     </div>
-    <div id="bee_swarm"></div>
+    <div id="candidate_plot"></div>
 
     <script>
         var title = "Anonymous Candidates' Answers on Immigration (2023)";
-        var units = "candiate";
+        var units = "candiate count";
+
+        // statement list
+        const statements = [
+            "Finland should accept fewer quota refugees from refugee camps.",
+            "Labour immigration is needed to sustain the Finnish welfare society.",
+            "Businesses must have the freedom to hire workers from outside the EU without an availability test.",
+            "Finland must be able to deport immigrants who commit crimes more easily than at present."
+        ]
+        console.table(statements);
+
+        // add statement to the dropdown menu selection
+        d3.select("#selectButton")
+            .selectAll("myOptions")
+                .data(statements)
+            .enter()
+                .append("option")
+            .text(function (d) { return d; }) 
+            .attr("value", function (d) { return d; }) 
 
         //set the dimensions and margins of the graph
         const margin = {top:80, right:30, bottom:30, left:30},
             width = 800 - margin.left - margin.right,
             height = 750 - margin.top - margin.bottom;
-        const padding = 0.01;
+        const padding = 1.15;
         //set the radius of the circles
         const circleRadius = 5; 
 
+        // check question list
+        // console.log(testData);
 
-        var svg = d3.select("#bee_swarm")
+        var svg = d3.select("#candidate_plot")
         .append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
@@ -61,17 +84,27 @@
                 .attr("color", "black");
 
             // build y axis
-            var yScale = d3.scaleBand()
+            var yScale = d3.scaleLinear()
                 .range([height,0])    
-                .domain(parties);
+                .domain([2116, 0]);
+
+            // const simulation = d3.forceSimulation(data)
+            //     .force("x", d3.forceX().strength(0.1).x(d => d.fewer_quota_refugees))
+            //     .force("y", d3.forceY(height / 2))
+            //     .stop();
+
+            // simulation.tick(300);
+
+            console.log(Math.abs(0-1058));
 
             svg.selectAll("circle")
                 .data(data)
                 .join("circle")
                 .attr("cx", (d) => xScale(d.fewer_quota_refugees))
-                .attr("cy", (d) => yScale(d.party))
+                .attr("cy", (d) => yScale(d.candidate))
                 .attr("r", circleRadius)
-                .attr("fill", "steelblue");
+                .attr("fill", "steelblue")
+                .attr("opacity", "0.5");
 
 
         })
