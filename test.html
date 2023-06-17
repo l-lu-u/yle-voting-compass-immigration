@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-random@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-force@3"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="content">
+        <svg width="1200" height="600">
+            <g transform="translate(0, 300)"></g>
+        </svg>
+    </div>
+    <script>
+        var width = 1200, height = 600;
+
+        var colorScale = ['orange', 'lightblue', '#B19CD9'];
+        var xCenter = [240, 480, 600, 720, 960];
+        var circleRadius = 2.4; 
+
+
+        var nodes = [
+            {
+                "party": "Sosialidemokraatit",
+                "fewer_quota_refugees": 1,
+                "labour_immigration_needed": 5,
+                "no_availability_test": 2,
+                "deport_crimes_easily": 2
+            },
+            {
+                "party": "VihreÃ¤t",
+                "fewer_quota_refugees": 1,
+                "labour_immigration_needed": 5,
+                "no_availability_test": 4,
+                "deport_crimes_easily": 2
+            },
+            {
+                "party": "Perussuomalaiset",
+                "fewer_quota_refugees": 5,
+                "labour_immigration_needed": 4,
+                "no_availability_test": 5,
+                "deport_crimes_easily": 5
+            },
+            {
+                "party": "Vasemmistoliitto",
+                "fewer_quota_refugees": 1,
+                "labour_immigration_needed": 5,
+                "no_availability_test": 2,
+                "deport_crimes_easily": 1
+            },
+            {
+                "party": "Sosialidemokraatit",
+                "fewer_quota_refugees": 1,
+                "labour_immigration_needed": 5,
+                "no_availability_test": 4,
+                "deport_crimes_easily": 5
+            },
+            {
+                "party": "Vasemmistoliitto",
+                "fewer_quota_refugees": 2,
+                "labour_immigration_needed": 5,
+                "no_availability_test": 2,
+                "deport_crimes_easily": 4
+            }
+
+        ]
+
+        d3.json("./data/candidate-answers-2023.json").then(function(data){
+            
+            var simulation = d3.forceSimulation(data)
+                .force('charge', d3.forceManyBody().strength(1))
+                .force('x', d3.forceX().x(function(d) {
+                    // console.log(d.fewer_quota_refugees + " " + xCenter[d.fewer_quota_refugees-1]);
+                    return xCenter[d.fewer_quota_refugees-1];
+                }))
+                .force('collision', d3.forceCollide().radius(circleRadius))
+                .on('tick', ticked);
+
+            function ticked() {
+                var u = d3.select('svg g')
+                    .selectAll('circle')
+                    .data(data)
+                    .join('circle')
+                    .attr('r', circleRadius)
+                    .attr('class', function(d){
+                        return d.fewer_quota_refugees
+                    })
+                    .style('fill', "steelblue")
+                    .attr('cx', function(d){
+                        return d.x;
+                    })
+                    .attr('cy', function(d){
+                        return d.y;
+                    });
+            }
+        })
+
+        
+
+
+    </script>
+</body>
+</html>

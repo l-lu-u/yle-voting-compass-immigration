@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/normalize.css"/>
     <link rel="stylesheet" href="./css/style.css?"/>
-    <scrip src="./test.js"></scrip>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/d3-random@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-force@3"></script>
     <title>What we talk about when we talk about immigration?</title>
 </head>
 <body>
@@ -23,6 +23,14 @@
     <script>
         var title = "Anonymous Candidates' Answers on Immigration (2023)";
         var units = "candiate count";
+
+        //set the dimensions and margins of the graph
+        const margin = {top:80, right:30, bottom:30, left:30},
+            width = 800 - margin.left - margin.right,
+            height = 750 - margin.top - margin.bottom;
+        const padding = 1.15;
+        //set the radius of the circles
+        const circleRadius = 5; 
 
         // statement list
         const statements = [
@@ -42,69 +50,30 @@
             .text(function (d) { return d; }) 
             .attr("value", function (d) { return d; }) 
 
-        //set the dimensions and margins of the graph
-        const margin = {top:80, right:30, bottom:30, left:30},
-            width = 800 - margin.left - margin.right,
-            height = 750 - margin.top - margin.bottom;
-        const padding = 1.15;
-        //set the radius of the circles
-        const circleRadius = 5; 
-
-        // check question list
-        // console.log(testData);
-
         var svg = d3.select("#candidate_plot")
-        .append("svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
-        .append("g")
-            .attr("transform", "translate("+margin.left+","+margin.top+")");
+            .append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+                .attr("transform", "translate("+margin.left+","+margin.top+")");
 
         d3.json("./data/candidate-answers-2023.json").then(function(data){
             // console.table(data);
 
             // list of parties
-            var parties = [];
-            data.forEach(element => {
-                var e = {
-                    party: element.party
-                }
-                parties.push(e.party);
-            });
+            // var parties = [];
+            // data.forEach(element => {
+            //     var e = {
+            //         party: element.party
+            //     }
+            //     parties.push(e.party);
+            // });
 
-            // build x axis
-            var xScale = d3.scaleLinear()
-                .range([0,width])
-                .domain([1, 5]);
-            svg.append("g")
-                // .attr("transform","translate(0,"+height+")")
-                .call(d3.axisTop(xScale))
-                .call(g => g.select(".domain")
-                    .remove())
-                .attr("color", "black");
+            var countCandidates = d3.selectAll(data).size();
+            console.log(countCandidates);
 
-            // build y axis
-            var yScale = d3.scaleLinear()
-                .range([height,0])    
-                .domain([2116, 0]);
-
-            // const simulation = d3.forceSimulation(data)
-            //     .force("x", d3.forceX().strength(0.1).x(d => d.fewer_quota_refugees))
-            //     .force("y", d3.forceY(height / 2))
-            //     .stop();
-
-            // simulation.tick(300);
-
-            console.log(Math.abs(0-1058));
-
-            svg.selectAll("circle")
-                .data(data)
-                .join("circle")
-                .attr("cx", (d) => xScale(d.fewer_quota_refugees))
-                .attr("cy", (d) => yScale(d.candidate))
-                .attr("r", circleRadius)
-                .attr("fill", "steelblue")
-                .attr("opacity", "0.5");
+            var candidatesByParty = d3.group(data, d=>d.party);
+            console.log(candidatesByParty);
 
 
         })
