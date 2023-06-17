@@ -20,65 +20,6 @@
     </div>
     <div id="candidate_plot"></div>
 
-    <script>
-        var title = "Anonymous Candidates' Answers on Immigration (2023)";
-        var units = "candiate count";
-
-        //set the dimensions and margins of the graph
-        const margin = {top:80, right:30, bottom:30, left:30},
-            width = 800 - margin.left - margin.right,
-            height = 750 - margin.top - margin.bottom;
-        const padding = 1.15;
-        //set the radius of the circles
-        const circleRadius = 5; 
-
-        // statement list
-        const statements = [
-            "Finland should accept fewer quota refugees from refugee camps.",
-            "Labour immigration is needed to sustain the Finnish welfare society.",
-            "Businesses must have the freedom to hire workers from outside the EU without an availability test.",
-            "Finland must be able to deport immigrants who commit crimes more easily than at present."
-        ]
-        console.table(statements);
-
-        // add statement to the dropdown menu selection
-        d3.select("#selectButton")
-            .selectAll("myOptions")
-                .data(statements)
-            .enter()
-                .append("option")
-            .text(function (d) { return d; }) 
-            .attr("value", function (d) { return d; }) 
-
-        var svg = d3.select("#candidate_plot")
-            .append("svg")
-                .attr("width", width + margin.left + margin.right)
-                .attr("height", height + margin.top + margin.bottom)
-            .append("g")
-                .attr("transform", "translate("+margin.left+","+margin.top+")");
-
-        d3.json("./data/candidate-answers-2023.json").then(function(data){
-            // console.table(data);
-
-            // list of parties
-            // var parties = [];
-            // data.forEach(element => {
-            //     var e = {
-            //         party: element.party
-            //     }
-            //     parties.push(e.party);
-            // });
-
-            var countCandidates = d3.selectAll(data).size();
-            console.log(countCandidates);
-
-            var candidatesByParty = d3.group(data, d=>d.party);
-            console.log(candidatesByParty);
-
-
-        })
-
-
-    </script>
+    <script src="./js/candidate_plot.js"></script>
 </body>
 </html>
