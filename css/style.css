@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&family=Yatra+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,200;0,400;0,600;0,800;1,200;1,400;1,600;1,800&family=Yatra+One&display=swap');
 
 :root {
     /* Font Family */
     --global--font-heading: 'Yatra One', cursive;
-    --global--font-paragraph: 'Palanquin', sans-serif;
+    --global--font-paragraph: 'Noto Sans', sans-serif;
 
     /* Font Size */
     --global--font-size-h1: 12vw;
     --global--font-size-h2: 7vw;
-    --global--font-size-h3: 1.6rem;
+    --global--font-size-h3: 2.0rem;
     --global--font-size-p: 1.4rem;
     --global--letter-spacing: normal;
     --global--line-height-p: 2.2rem;
@@ -74,16 +74,20 @@ html {
     background-color: var(--colour-background);
     background-image: url("../images/swallow.svg");
     background-repeat: no-repeat;
-    background-position: 80% 20%;
+    background-position: 90% 70%;
     background-size: 800px;
-    height: 80%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
 }
 .card._header h1, h2{
     color: var(--colour-header);
     overflow-wrap: break-word;
+}
+.card._header .card-note{
+    text-align: right;
+    font-style: italic;
 }
 .card._plot{
     text-align: center;
@@ -122,13 +126,34 @@ a:hover{
     background-color: var(--colour-cinnabar);
     color:var(--colour-beige)
 }
-.highlight {
+.subtitle {
+    font-size: 2.4rem;
+    font-style: italic;
+    font-weight: 600;
     background-color: var(--colour-header);
     color:var(--colour-highlight);
     display: inline-block;
     width: fit-content;
-    font-style: italic;
-    font-weight: 600;
+}
+
+/* Select */
+#selectButton{
+    font-size:var(--global--font-size-h3);
+    height: 5.4rem;
+    padding: 0 4rem 0 2rem;
+    border:var(--colour-header) solid 2px;
+    border-radius: 2rem;
+    /** for the dropdown indicator */
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+}
+#selectButton:focus{
+    background-repeat: no-repeat;
+    border-color: var(--bg-red);
+    outline: 0;
 }
 
 /* Plot */
