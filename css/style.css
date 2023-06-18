@@ -98,3 +98,39 @@ a:hover{
 .highlight {
     background-color: var(--colour-eggshell);
 }
+
+/* Plot */
+#candidate_plot svg{
+    display: block;
+    margin:auto;
+}
+circle {
+    fill:var(--colour-other);
+}
+circle.Kokoomus {
+    fill:var(--colour-kok);
+}
+circle.Perussuomalaiset {
+    fill:var(--colour-ps);
+}
+circle.Sosialidemokraatit {
+    fill:var(--colour-sdp);
+}
+circle.Keskusta {
+    fill:var(--colour-kesk);
+}
+circle.VihreÃ¤t {
+    fill:var(--colour-vihr);
+}
+circle.Vasemmistoliitto {
+    fill:var(--colour-vas);
+}
+circle.RKP {
+    fill:var(--colour-rkp);
+}
+circle.Kristillisdemokraatit {
+    fill:var(--colour-kd);
+}
+circle.Liike.Nyt{
+    fill:var(--colour-liik);
+}
