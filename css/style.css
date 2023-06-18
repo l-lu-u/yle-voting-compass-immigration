@@ -6,8 +6,8 @@
     --global--font-paragraph: 'Palanquin', sans-serif;
 
     /* Font Size */
-    --global--font-size-h1: 12.8rem;
-    --global--font-size-h2: 6.4rem;
+    --global--font-size-h1: 12vw;
+    --global--font-size-h2: 7vw;
     --global--font-size-h3: 1.6rem;
     --global--font-size-p: 1.4rem;
     --global--letter-spacing: normal;
@@ -26,7 +26,7 @@
     --global--border-radius: 3.6rem;
 
     /* Colour */
-    --colour-ink: #363636;
+    /* parties*/
     --colour-kok: #265BB3;
     --colour-ps: #57BFEC;
     --colour-sdp: #DA3C2E;
@@ -37,8 +37,12 @@
     --colour-kd: #724BE3;
     --colour-liik: #AF0079;
     --colour-other: #9FABB4;
+
+    /*content*/
     --colour-background:#FE6332;
     --colour-header: #410F36;
+    --colour-highlight: #A0FFAA;
+    --colour-ink: #363636;
 }
 
 /* Container */
@@ -51,7 +55,6 @@ body {
     font-family: var(--global--font-paragraph);
     background-color: white;
     color: var(--colour-ink);
-    padding: var(--global--spacing-primary);
 }
 html, body, section {
     block-size: 100%;
@@ -62,11 +65,25 @@ html {
 }
 
 /* Sections */
+.card{
+    padding: var(--global--spacing-primary);
+    width: 100%;
+    box-sizing: border-box;
+}
 .card._header{
-    /* background-color: var(--colour-background); */
+    background-color: var(--colour-background);
+    background-image: url("../images/swallow.svg");
+    background-repeat: no-repeat;
+    background-position: 80% 20%;
+    background-size: 800px;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .card._header h1, h2{
     color: var(--colour-header);
+    overflow-wrap: break-word;
 }
 .card._plot{
     text-align: center;
@@ -81,7 +98,7 @@ h3, .h3 {
 h1, .h1{
     
     font-size: var(--global--font-size-h1);
-    margin: 0 0 var(--global--spacing-primary);
+    margin: 0 0 var(--global--spacing-secondary);
 }
 h2, .h2{
     font-size: var(--global--font-size-h2);
@@ -92,6 +109,7 @@ h3, .h3{
     font-size: var(--global--font-size-h3);
 }
 p{
+    font-size: 1.6rem;
     line-height: var(--global--line-height-p);
     font-family: var(--global--font-paragraph);
 }
@@ -105,7 +123,12 @@ a:hover{
     color:var(--colour-beige)
 }
 .highlight {
-    background-color: var(--colour-eggshell);
+    background-color: var(--colour-header);
+    color:var(--colour-highlight);
+    display: inline-block;
+    width: fit-content;
+    font-style: italic;
+    font-weight: 600;
 }
 
 /* Plot */
