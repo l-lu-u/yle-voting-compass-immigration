@@ -30,7 +30,7 @@ const statements = [
 ]
 console.table(statements);
 
-
+    
 // add statement to the dropdown menu selection
 d3.select("#selectButton")
     .selectAll("myOptions")
@@ -60,6 +60,15 @@ d3.select("#selectButton").on("change", function(d) {
 function plot(selectedOption){
     console.log(selectedOption);
     svg.selectAll("*").remove();
+
+    // create x axis
+    var xScale = d3.scalePoint()
+        .domain(["Completely disagree", "Somewhat disagree", "Somewhat agree", "Completely agree"])         // This is what is written on the Axis: from 0 to 100
+        .range([260, 920]); 
+    svg.append("g")
+        .call(d3.axisTop(xScale).tickSize(500))
+        .attr("transform", "translate(0,300)") 
+        .attr("color", "black");
 
     d3.json("./data/candidate-answers-2023.json").then(function(data){
 
