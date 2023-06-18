@@ -42,7 +42,8 @@
     --colour-background:#FE6332;
     --colour-header: #410F36;
     --colour-highlight: #A0FFAA;
-    --colour-ink: #363636;
+    /* --colour-ink: #363636; */
+    --colour-ink: #410F36;
 }
 
 /* Container */
@@ -124,8 +125,7 @@ a {
     font-weight: bold;
 }
 a:hover{
-    background-color: var(--colour-cinnabar);
-    color:var(--colour-beige)
+    background-color: var(--colour-highlight);
 }
 .subtitle {
     font-size: 2.4rem;
