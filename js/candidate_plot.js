@@ -2,8 +2,8 @@ var width = 1200, height = 600;
 //set the dimensions and margins of the graph
 var margin = {top:100, right:30, bottom:30, left:30};
 
-var xCenter = [240, 480, 600, 720, 960];
-var circleRadius = 2.4; 
+var xCenter = [200, 480, 600, 720, 1000];
+var circleRadius = 3; 
 
 // statement list
 const statements = [
@@ -64,16 +64,18 @@ function plot(selectedOption){
     // create x axis
     var xScale = d3.scalePoint()
         .domain(["Completely disagree", "Somewhat disagree", "Somewhat agree", "Completely agree"])         // This is what is written on the Axis: from 0 to 100
-        .range([260, 920]); 
+        .range([260, 940]); 
     svg.append("g")
-        .call(d3.axisTop(xScale).tickSize(500))
-        .attr("transform", "translate(0,300)") 
+        .call(d3.axisTop(xScale).tickSize(10))
+        .call(g => g.select(".domain")
+                .remove())
+        .attr("transform", "translate(0,-150)") 
         .attr("color", "black");
 
     d3.json("./data/candidate-answers-2023.json").then(function(data){
 
         var simulation = d3.forceSimulation(data)
-            .force('charge', d3.forceManyBody().strength(1))
+            .force('charge', d3.forceManyBody().strength(1.2))
             .force('x', d3.forceX().x(function(d) {
                 var scatterX;
                 switch(selectedOption) {

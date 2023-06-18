@@ -8,7 +8,7 @@
     /* Font Size */
     --global--font-size-h1: 12vw;
     --global--font-size-h2: 7vw;
-    --global--font-size-h3: 2.0rem;
+    --global--font-size-h3: 4vw;
     --global--font-size-p: 1.4rem;
     --global--letter-spacing: normal;
     --global--line-height-p: 2.2rem;
@@ -91,6 +91,7 @@ html {
 }
 .card._plot{
     text-align: center;
+    border: var(--colour-highlight) 5rem solid;
 }
 
 /* Typography */
@@ -138,7 +139,7 @@ a:hover{
 
 /* Select */
 #selectButton{
-    font-size:var(--global--font-size-h3);
+    font-size:1.6rem;
     height: 5.4rem;
     padding: 0 4rem 0 2rem;
     border:var(--colour-header) solid 2px;
@@ -160,6 +161,9 @@ a:hover{
 #candidate_plot svg{
     display: block;
     margin:auto;
+}
+g line {
+    stroke-dasharray: 1 1;
 }
 circle {
     stroke:white;
