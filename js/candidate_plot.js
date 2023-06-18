@@ -30,6 +30,7 @@ const statements = [
 ]
 console.table(statements);
 
+
 // add statement to the dropdown menu selection
 d3.select("#selectButton")
     .selectAll("myOptions")
