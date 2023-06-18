@@ -105,6 +105,7 @@ a:hover{
     margin:auto;
 }
 circle {
+    stroke:white;
     fill:var(--colour-other);
 }
 circle.Kokoomus {
